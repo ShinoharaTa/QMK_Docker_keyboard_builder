@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  qmk:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ../qmk_firmware/keyboards:/root/qmk_firmware/keyboards
+      - ../qmk_firmware/.build:/root/qmk_firmware/.build
+    tty: true
+    working_dir: /root/qmk_firmware
